@@ -9,16 +9,16 @@
 
     <!-- add our i18n resource -->
     <resource type="i18n" name="i18n" location="testing-plugin"/>
-    
-    <!-- add our web resources -->
-    <web-resource key="testing-plugin-resources" name="testing-plugin Web Resources">
-        <dependency>com.atlassian.auiplugin:ajs</dependency>
-        
-        <resource type="download" name="testing-plugin.css" location="/css/testing-plugin.css"/>
-        <resource type="download" name="testing-plugin.js" location="/js/testing-plugin.js"/>
-        <resource type="download" name="images/" location="/images"/>
 
-        <context>testing-plugin</context>
+    <!-- The panel -->
+    <web-panel key="my-panel" location="bitbucket.web.repository.browse.filebrowser.before">
+        <resource name="view" type="velocity" location="/my-template.vm" />
+    </web-panel>
+
+    <web-resource key="my-resource">
+        <resource type="download" name="my-plugin.js" location="/js/my-plugin.js" />
+        <!-- List of contexts https://developer.atlassian.com/server/bitbucket/reference/web-resource-contexts/ -->
+        <context>bitbucket.page.repository.filebrowser</context>
     </web-resource>
-    
+
 </atlassian-plugin>

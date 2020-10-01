@@ -21,7 +21,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <amps.version>8.0.2</amps.version>
-        <bitbucket.version>5.16.0</bitbucket.version>
+        <bitbucket.version>7.6.0</bitbucket.version>
         <bitbucket.data.version>${bitbucket.version}</bitbucket.data.version>
 
         <!-- This property ensures consistency between the key in atlassian-plugin.xml and the OSGi bundle's key. -->
@@ -117,6 +117,8 @@
                 <version>${amps.version}</version>
                 <extensions>true</extensions>
                 <configuration>
+                    <compressJs>false</compressJs>
+                    <compressCss>false</compressCss>
                     <products>
                         <product>
                             <id>bitbucket</id>
